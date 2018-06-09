@@ -9,6 +9,10 @@ public interface CourseDao {
 	
 	public List<Course> getUserCourse(Integer userId);
 	
+	public Course getCourseByCourseId(Integer courseId);
+	
 	public List<Course> getOtherCourse(Integer userId);
+	
+	public Integer createCourse(Course course);
 	
 }

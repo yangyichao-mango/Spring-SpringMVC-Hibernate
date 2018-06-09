@@ -22,6 +22,19 @@ public class CourseDaoImpl implements CourseDao{
 	public CourseDaoImpl() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Integer createCourse(Course course)
+	{
+		Integer id = null;
+		try{
+			id = (Integer) sessionFactory.getCurrentSession().save(course);
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+			return id;
+		}
+		return id;
+	}
 
 
 	public List<Course> getAllCourse() {
@@ -69,6 +82,14 @@ public class CourseDaoImpl implements CourseDao{
         Query query = sessionFactory.getCurrentSession().createQuery(hql);  
         query.setInteger(0, userId);
         return query.list();
+	}
+
+	public Course getCourseByCourseId(Integer courseId) {
+		// TODO Auto-generated method stub
+		String hql = "from Course where courseId = ?";  
+        Query query = sessionFactory.getCurrentSession().createQuery(hql);  
+        query.setInteger(0, courseId);
+        return (Course) query.uniqueResult();
 	}
 
 }

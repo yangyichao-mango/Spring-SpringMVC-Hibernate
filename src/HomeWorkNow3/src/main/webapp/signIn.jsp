@@ -11,9 +11,12 @@
 	<div>
 	<form action="${pageContext.request.contextPath}/signIn" method = "post">
 	<br>
-		userName: <input type="text" name="username" /> 
+		用户名: <input type="text" name="username" /> 
 		<br>
-		password: <input type="password" name="password" /> 
+		密码: <input type="password" name="password" /> 
+		<br>
+		状态: <input type="radio" name="status" value = "0">学生
+		<input type="radio" name="status" value = "1">老师
 		<br>
 		
 		<input type="submit" value="Submit" />

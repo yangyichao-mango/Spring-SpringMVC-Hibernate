@@ -9,7 +9,9 @@
 </head>
 <body>
 <jsp:include   page="navigation.jsp" flush="true"/>
+<h5>${info}</h5>
 <h5>课程详情</h5>
+
 <table border="1">
 
 		<tbody>

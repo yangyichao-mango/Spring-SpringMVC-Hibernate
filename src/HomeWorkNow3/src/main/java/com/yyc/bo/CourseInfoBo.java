@@ -8,4 +8,5 @@ public interface CourseInfoBo {
 	
 	public List<CourseInfo> getCourseInfo(Integer courseId);
 
+	public Boolean createCourseInfoList(Integer courseId,List<CourseInfo> courseInfoList);
 }

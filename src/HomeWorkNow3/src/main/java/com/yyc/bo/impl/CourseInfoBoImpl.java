@@ -24,4 +24,9 @@ public class CourseInfoBoImpl implements CourseInfoBo{
 		return courseInfoDao.getCourseInfo(courseId);
 	}
 
+	public Boolean createCourseInfoList(Integer courseId,List<CourseInfo> courseInfoList) {
+		// TODO Auto-generated method stub
+		return courseInfoDao.createCourseInfoList(courseId,courseInfoList);
+	}
+
 }

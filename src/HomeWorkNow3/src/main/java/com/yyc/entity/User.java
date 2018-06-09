@@ -29,6 +29,18 @@ public class User {
     
     @Column(length=32)  
     private String grade;  
+    @Column(length = 32)
+    private Integer status;
+    
+    public Integer getStatus()
+    {
+    	return status;
+    }
+    
+    public void setStatus(Integer status)
+    {
+    	this.status = status;
+    }
     
     public String getGrade() {  
         return grade;  

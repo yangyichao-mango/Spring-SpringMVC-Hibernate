@@ -36,4 +36,14 @@ public class CourseBoImpl implements CourseBo{
 		return courseDao.getOtherCourse(userId);
 	}
 
+	public Integer createCourse(Course course) {
+		// TODO Auto-generated method stub
+		return courseDao.createCourse(course);
+	}
+
+	public Course getCourseByCourseId(Integer courseId) {
+		// TODO Auto-generated method stub
+		return courseDao.getCourseByCourseId(courseId);
+	}
+
 }
