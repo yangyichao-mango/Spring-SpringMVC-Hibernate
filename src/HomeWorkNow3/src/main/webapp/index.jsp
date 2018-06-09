@@ -8,8 +8,12 @@
 <script type="text/javascript">
 	$(function() {
 		$(".delete").click(function() {
-			alert("确定退选当前课程？");
-			var href = $(this).attr("href");
+			
+			var courseId = $(this).val(); 
+			alert("确定退选当前课程？"+courseId);
+			var userId = ${user.userId}; 
+			var href = "${pageContext.servletContext.contextPath}/users/" + userId + "/courses";			
+			$("#deleteIn").val(courseId);
 			$(".deleteForm").attr("action", href).submit();
 			return false;
 		});
@@ -17,9 +21,11 @@
 	
 	$(function() {
 		$(".post").click(function() {
-			alert("确定选择当前课程？");
-			var href = $(this).attr("href");
-			
+			var courseId = $(this).val(); 
+			alert("确定退选当前课程？"+courseId);
+			var userId = ${user.userId}; 
+			var href = "${pageContext.servletContext.contextPath}/users/" + userId + "/courses";			
+			$("#chooseIn").val(courseId);
 			$(".chooseForm").attr("action", href).submit();
 			return false;
 		});
@@ -32,10 +38,12 @@
 <body>
 	<form class = "deleteForm" action="" method="POST">
 		<input type="hidden" name="_method" value="DELETE">
+		<input name = "courseId" type="hidden" id = "deleteIn" value=""/>
 	</form>
 	
 	<form class = "chooseForm" action="" method="POST">
 		<input type="hidden" name="_method" value="POST">
+		<input name = "courseId" type="hidden" id = "chooseIn" value=""/>
 	</form>
 	<h5>已选课程</h5>
 	<table border="1">
@@ -57,8 +65,8 @@
 						<td>${course.beginDate }</td>
 						<td>${course.endDate }</td>
 
-						<td><a class = "delete"
-						href="${pageContext.servletContext.contextPath}/users/${user.userId}/courses/${course.courseId}">退选</a></td>
+						<td><button type = "button" class = "delete"
+						value="${course.courseId}">退选</button></td>
 						<td><a
 						href="${pageContext.servletContext.contextPath}/users/${user.userId}/courses/${course.courseId}">详细信息</a></td>
 					</tr>
@@ -87,10 +95,8 @@
 						<td>${course.beginDate }</td>
 						<td>${course.endDate }</td>
 
-						<td>
-						<a class = "post"
-						href="${pageContext.servletContext.contextPath}/users/${user.userId}/courses/${course.courseId}">选择</a>
-						</td>
+						<td><button type = "button" class = "post"
+						value="${course.courseId}">选课</button></td>
 						<td>
 						<a href="${pageContext.servletContext.contextPath}/users/${user.userId}/courses/${course.courseId}">详细信息</a>
 						</td>

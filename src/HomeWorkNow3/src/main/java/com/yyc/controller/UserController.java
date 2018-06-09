@@ -53,7 +53,7 @@ public class UserController {
 		System.out.println("userPage");
 		User res = (User) httpServletRequest.getSession().getAttribute("user");
 		
-		List<Course> chooseCourse = courseBo.getUserCourse(res.getUserId());
+		List<Course> chooseCourse = courseBo.getUserCourse(res.getUserId()); 
 		model.addAttribute("chooseCourse", chooseCourse);
 
 		List<Course> allCourse = courseBo.getAllCourse();
@@ -72,8 +72,9 @@ public class UserController {
 		return "/courseInfo";
 	}
 	//用户退选课程
-	@RequestMapping(value = "/{userId}/courses/{courseId}", method = RequestMethod.DELETE)
-	public String deleteCourse(@PathVariable("userId") Integer userId, @PathVariable("courseId") Integer courseId) {
+	@RequestMapping(value = "/{userId}/courses", method = RequestMethod.DELETE)
+	public String deleteCourse(@PathVariable("userId") Integer userId, Integer courseId) {
+		//System.out.println("AAA" + " " + courseId);
 		Choose choose = new Choose();
 		choose.setUserId(userId);
 		choose.setCourseId(courseId);
@@ -81,8 +82,8 @@ public class UserController {
 		return "redirect:/users/" + userId +"/courses";
 	}
 	//用户选择课程
-	@RequestMapping(value = "/{userId}/courses/{courseId}", method = RequestMethod.POST)
-	public String chooseCourse(@PathVariable("userId") Integer userId, @PathVariable("courseId") Integer courseId) {
+	@RequestMapping(value = "/{userId}/courses", method = RequestMethod.POST)
+	public String chooseCourse(@PathVariable("userId") Integer userId, Integer courseId) {
 		Choose choose = new Choose();
 		choose.setUserId(userId);
 		choose.setCourseId(courseId);
