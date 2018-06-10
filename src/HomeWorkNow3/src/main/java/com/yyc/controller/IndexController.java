@@ -29,7 +29,7 @@ public class IndexController {
 	
 		public User findUser(User user)
 		{
-			User res = userBo.findUser(user.getPassword(), user.getUsername());
+			User res = userBo.findUser(user.getPassword(), user.getUsername(),user.getStatus());
 			return res;
 		}
 		
@@ -37,7 +37,7 @@ public class IndexController {
 		@RequestMapping(value = "/signIn", method = RequestMethod.GET)
 		public String signInPage(HttpServletRequest httpServletRequest) {
 			HttpSession session = httpServletRequest.getSession();
-			if(session != null)
+			if(session.getAttribute("user") != null)
 				session.removeAttribute("user");
 				
 			return "/signIn";
@@ -71,6 +71,7 @@ public class IndexController {
 		@RequestMapping(value = "/signIn", method = RequestMethod.POST)
 		public String signIn(Model model,User user, HttpServletRequest httpServletRequest) {
 			System.out.println("signIn");
+			System.out.println("ÓÃ»§×´Ì¬£º"+user.getStatus());
 			User res = findUser(user);
 			
 			if (res != null) {

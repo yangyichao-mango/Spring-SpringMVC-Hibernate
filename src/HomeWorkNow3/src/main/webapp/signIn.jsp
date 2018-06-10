@@ -19,7 +19,7 @@
 		<input type="radio" name="status" value = "1">老师
 		<br>
 		
-		<input type="submit" value="Submit" />
+		<input type="submit" value="提交" />
 	</form>
 	</div>
 	<div>

@@ -15,8 +15,8 @@ public class UserBoImpl implements UserBo {
     }  
   
    
-    public User findUser(String password,String username) {  
-        return userDao.findUser(password,username);  
+    public User findUser(String password,String username,Integer status) {  
+        return userDao.findUser(password,username,status);  
     }  
   
 

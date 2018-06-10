@@ -6,7 +6,7 @@ import com.yyc.entity.User;
   
 public interface UserDao {  
   
-    public User findUser(String password,String username);  
+    public User findUser(String password,String username, Integer status);  
     
     public User findUserById(Integer userId); 
 

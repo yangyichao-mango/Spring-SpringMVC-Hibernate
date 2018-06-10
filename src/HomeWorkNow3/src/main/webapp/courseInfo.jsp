@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include   page="navigation.jsp" flush="true"/>
+<%@ include file="navigation.jsp"%>
 <h5>${info}</h5>
 <h5>课程详情</h5>
 

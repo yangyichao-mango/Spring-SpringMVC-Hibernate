@@ -34,7 +34,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<jsp:include   page="navigation.jsp" flush="true"/>
+<%@ include file="navigation.jsp"%>
 <body>
 	<form class = "deleteForm" action="" method="POST">
 		<input type="hidden" name="_method" value="DELETE">

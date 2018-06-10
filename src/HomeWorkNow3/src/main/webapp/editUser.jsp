@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
 <title>Insert title here</title>  
 </head>  
-<jsp:include   page="navigation.jsp" flush="true"/>
+<%@ include file="navigation.jsp"%>
 <body>  
     <h1>编辑用户</h1> 
     <form action="${pageContext.servletContext.contextPath}/users" name="userForm" method="post">  

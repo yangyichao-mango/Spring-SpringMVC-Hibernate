@@ -17,13 +17,13 @@ public class UserDaoImpl implements UserDao {
     }  
       
 
-    public User findUser(String password,String username) {  
+    public User findUser(String password,String username,Integer status) {  
         
-        String hql = "from User u where u.username = ? AND u.password = ?";  
+        String hql = "from User u where u.username = ? AND u.password = ? and u.status = ?";  
         Query query = sessionFactory.getCurrentSession().createQuery(hql);  
         query.setString(0, username);  
         query.setString(1, password); 
-          
+        query.setInteger(2, status); 
         return (User)query.uniqueResult();  
     }  
   

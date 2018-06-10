@@ -125,7 +125,7 @@ td {
 
 <title>Insert title here</title>
 </head>
-<jsp:include page="navigation.jsp" flush="true" />
+<%@ include file="navigation.jsp"%>
 <body>
 	<h5>${info}</h5>
 
@@ -137,7 +137,7 @@ td {
 				name="endDate" /> <br> 年级: <input type="text" name="grade" />
 			<br> 请输入课程节数：<input type="number" id="row" max="20" min="1"
 				required="required" title="列数范围1-20"> <input type="submit"
-				value="创建表格" onclick="return create(row,d1);"> <br>
+				value="创建该课程信息表格" onclick="return create(row,d1);"> <br>
 		</form>
 	</div>
 
